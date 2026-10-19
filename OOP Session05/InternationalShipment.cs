@@ -27,7 +27,7 @@ internal class InternationalShipment:Shipment, ITrackable, IInsurable
             Coustomfee = value >= 0 ? value : throw new ArgumentException("ExtraFee must be grear than or equal 0");
         }
     }
-    public InternationalShipment(string trackingcode, string description, double weight, decimal deliveryfee, DeliveryAddress destination,string destinationcountry,decimal customfee, int shipmentCount):base(trackingcode,description,weight,deliveryfee,destination, shipmentCount)
+    public InternationalShipment(string trackingcode, string description, double weight, decimal deliveryfee, DeliveryAddress destination, string destinationcountry, decimal customfee) : base(trackingcode, description, weight, deliveryfee, destination )
     {
         DestinationCountry = destinationcountry;
         CustomFee = customfee;

@@ -1,6 +1,6 @@
 ﻿namespace OOP_Session05;
 
-public partial class Shipment 
+public partial class Shipment
 {
     private string trackingcode;
     private string description;
@@ -11,7 +11,7 @@ public partial class Shipment
     public string TrackingCode
     {
         get { return trackingcode; }
-         set
+        set
         {
             if (!string.IsNullOrWhiteSpace(value)) trackingcode = value;
         }
@@ -39,7 +39,7 @@ public partial class Shipment
     }
     public virtual decimal EstimatedCost()
     {
-        return DeliveryFee + (decimal) (Weight* 5);
+        return DeliveryFee + (decimal)(Weight * 5);
     }
 
     public Shipment(string trackingcode)
@@ -50,14 +50,14 @@ public partial class Shipment
         DeliveryFee = 50;
         Destination = default;
     }
-    public Shipment(string trackingcode, string description, double weight, decimal deliveryfee, DeliveryAddress destination , int shipmentCount)
+    public Shipment(string trackingcode, string description, double weight, decimal deliveryfee, DeliveryAddress destination  )
     {
         TrackingCode = trackingcode;
         Description = description;
         Weight = weight;
         DeliveryFee = deliveryfee;
         Destination = destination;
-        shipmentCount++;
+        ShipmentCount++;
     }
     public decimal UpdateDeliveryFee(decimal newFee)
     {
@@ -92,10 +92,10 @@ public partial class Shipment
             Weight = newWeight + extraPackingWeight;
         }
     }
-  
-   public Shipment CopyShipment()
-   {
-        return new Shipment(TrackingCode, Description, Weight, DeliveryFee, Destination, ShipmentCount );
+
+    public Shipment CopyShipment()
+    {
+        return new Shipment(TrackingCode, Description, Weight, DeliveryFee, Destination);
     }
 
     public Shipment ShallowCopyShipment()
@@ -105,18 +105,14 @@ public partial class Shipment
     public Shipment DeepCopyShipment()
     {
         Shipment copy = (Shipment)this.MemberwiseClone();
-        copy.Destination = new DeliveryAddress( Destination.city, Destination.street, Destination.buildingNumber);
+        copy.Destination = new DeliveryAddress(Destination.city, Destination.street, Destination.buildingNumber);
         return copy;
     }
-     static Shipment()
-    {
-        ShipmentCount =0;
-    }
+    
     public static int GetTotalShipments()
     {
         return ShipmentCount;
     }
 
-  
 }
 

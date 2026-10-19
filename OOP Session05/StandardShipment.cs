@@ -4,7 +4,7 @@ namespace OOP_Session05;
 
 internal class StandardShipment:Shipment , ITrackable, IInsurable
 {
-    public StandardShipment(string trackingcode, string description, double weight, decimal deliveryfee, DeliveryAddress destination, int shipmentCount):base (trackingcode, description, weight, deliveryfee, destination, shipmentCount )
+    public StandardShipment(string trackingcode, string description, double weight, decimal deliveryfee, DeliveryAddress destination):base (trackingcode, description, weight, deliveryfee, destination)
     {
         
     }

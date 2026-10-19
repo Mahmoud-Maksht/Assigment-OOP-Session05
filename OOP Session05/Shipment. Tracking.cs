@@ -14,4 +14,5 @@ public partial class Shipment
         if (!string.IsNullOrWhiteSpace(newStatus))
             TrackingStatus = newStatus;
     }
+ 
 }

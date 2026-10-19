@@ -5,7 +5,7 @@ namespace OOP_Session05;
 internal class ExpressShipment:Shipment, ITrackable, IInsurable
 {
     private decimal Extrafee;
-    public ExpressShipment(string trackingcode, string description, double weight, decimal deliveryfee, DeliveryAddress destination, decimal extrafee , int shipmentCount) : base(trackingcode, description, weight, deliveryfee, destination, shipmentCount)
+    public ExpressShipment(string trackingcode, string description, double weight, decimal deliveryfee, DeliveryAddress destination, decimal extrafee ) : base(trackingcode, description, weight, deliveryfee, destination)
     {
         ExtraFee = extrafee;
    

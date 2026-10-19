@@ -64,59 +64,180 @@
             #endregion
 
             #region Part02
+            #region Coping
+
             Console.WriteLine("---------- before copying ----------");
-            DeliveryAddress address1 = new DeliveryAddress("New York", "5th Avenue", 123);
-            Shipment shipment1 = new Shipment("S101", "Laptop", 15, 10, address1, 0);
-            Shipment shipment2 = shipment1;
-            Shipment shipment3 = shipment1.ShallowCopyShipment();
-            Shipment shipment4 = shipment1.DeepCopyShipment();
-            Console.WriteLine("----------- Shipment 1 object -----------");
-            shipment1.PrintShipmentDetails();
-            Console.WriteLine("----------- Shipment 2 object -----------");
-            shipment2.PrintShipmentDetails();
-            Console.WriteLine("----------- Shipment 3 shallow copy -----------");
-            shipment3.PrintShipmentDetails();
-            Console.WriteLine("----------- Shipment 4 deep copy -----------");
-            shipment4.PrintShipmentDetails();
+            //DeliveryAddress address1 = new DeliveryAddress("New York", "5th Avenue", 123);
+            //Shipment shipment1 = new Shipment("S101", "Laptop", 15, 10, address1);
+            //Shipment shipment2 = shipment1;
+            //Shipment shipment3 = shipment1.ShallowCopyShipment();
+            //Shipment shipment4 = shipment1.DeepCopyShipment();
+            //Console.WriteLine("----------- Shipment 1 object -----------");
+            //shipment1.PrintShipmentDetails();
+            //Console.WriteLine("----------- Shipment 2 object -----------");
+            //shipment2.PrintShipmentDetails();
+            //Console.WriteLine("----------- Shipment 3 shallow copy -----------");
+            //shipment3.PrintShipmentDetails();
+            //Console.WriteLine("----------- Shipment 4 deep copy -----------");
+            //shipment4.PrintShipmentDetails();
 
-            Console.WriteLine("---------- After copying ----------");
-            shipment2.Destination.city = "Los Angeles";
-            shipment2.Destination.street = "Sunset Boulevard";
-            shipment2.Destination.buildingNumber = 456;
-            shipment2.TrackingCode = "S202";
-            shipment2.Description = "Smartphone";
-            shipment2.Weight = 5;
-            shipment2.DeliveryFee = 20;
-            shipment3.Destination.city = "Giza";
-            shipment3.Destination.street = "Pyramid Street";
-            shipment3.Destination.buildingNumber = 564;
-            shipment3.TrackingCode = "S111";
-            shipment3.Description = "Tablet";
-            shipment3.Weight = 7;
-            shipment3.DeliveryFee = 12;
-            shipment4.Destination.city = "Cairo";
-            shipment4.Destination.street = "El Nile Street";
-            shipment4.Destination.buildingNumber = 968;
-            shipment4.TrackingCode = "S777";
-            shipment4.Description = "Camera";
-            shipment4.Weight = 6;
-            shipment4.DeliveryFee = 9;
-            Console.WriteLine("----------- Shipment 1 object -----------");
-            shipment1.PrintShipmentDetails();
-            Console.WriteLine("----------- Shipment 2 object -----------");
-            shipment2.PrintShipmentDetails();
-            Console.WriteLine("----------- Shipment 3 shallow copy -----------");
-            shipment3.PrintShipmentDetails();
-            Console.WriteLine("----------- Shipment 4 deep copy -----------");
-            shipment4.PrintShipmentDetails();
-            Console.WriteLine("---------- Reference Comparison ----------");
-            Console.WriteLine($"Shipment 1 and Shipment 2 are the same object: " + $"{ReferenceEquals(shipment1, shipment2)}"); 
-            Console.WriteLine($"Shipment 1 and Shipment 3 are the same object: " + $"{ReferenceEquals(shipment1, shipment3)}"); 
-            Console.WriteLine($"Shipment 1 and Shipment 4 are the same object: " + $"{ReferenceEquals(shipment1, shipment4)}"); 
-            Console.WriteLine($"Shipment 1 and Shipment 3 have the same address object: " + $"{ReferenceEquals(shipment1.Destination, shipment3.Destination)}");
-            Console.WriteLine($"Shipment 1 and Shipment 4 have the same address object: " + $"{ReferenceEquals(shipment1.Destination, shipment4.Destination)}");
+            //Console.WriteLine("---------- After copying ----------");
+            //shipment2.Destination.city = "Los Angeles";
+            //shipment2.Destination.street = "Sunset Boulevard";
+            //shipment2.Destination.buildingNumber = 456;
+            //shipment2.TrackingCode = "S202";
+            //shipment2.Description = "Smartphone";
+            //shipment2.Weight = 5;
+            //shipment2.DeliveryFee = 20;
+            //shipment3.Destination.city = "Giza";
+            //shipment3.Destination.street = "Pyramid Street";
+            //shipment3.Destination.buildingNumber = 564;
+            //shipment3.TrackingCode = "S111";
+            //shipment3.Description = "Tablet";
+            //shipment3.Weight = 7;
+            //shipment3.DeliveryFee = 12;
+            //shipment4.Destination.city = "Cairo";
+            //shipment4.Destination.street = "El Nile Street";
+            //shipment4.Destination.buildingNumber = 968;
+            //shipment4.TrackingCode = "S777";
+            //shipment4.Description = "Camera";
+            //shipment4.Weight = 6;
+            //shipment4.DeliveryFee = 9;
+            //Console.WriteLine("----------- Shipment 1 object -----------");
+            //shipment1.PrintShipmentDetails();
+            //Console.WriteLine("----------- Shipment 2 object -----------");
+            //shipment2.PrintShipmentDetails();
+            //Console.WriteLine("----------- Shipment 3 shallow copy -----------");
+            //shipment3.PrintShipmentDetails();
+            //Console.WriteLine("----------- Shipment 4 deep copy -----------");
+            //shipment4.PrintShipmentDetails();
+            //Console.WriteLine("---------- Reference Comparison ----------");
+            //Console.WriteLine($"Shipment 1 and Shipment 2 are the same object: " + $"{ReferenceEquals(shipment1, shipment2)}"); 
+            //Console.WriteLine($"Shipment 1 and Shipment 3 are the same object: " + $"{ReferenceEquals(shipment1, shipment3)}"); 
+            //Console.WriteLine($"Shipment 1 and Shipment 4 are the same object: " + $"{ReferenceEquals(shipment1, shipment4)}"); 
+            //Console.WriteLine($"Shipment 1 and Shipment 3 have the same address object: " + $"{ReferenceEquals(shipment1.Destination, shipment3.Destination)}");
+            //Console.WriteLine($"Shipment 1 and Shipment 4 have the same address object: " + $"{ReferenceEquals(shipment1.Destination, shipment4.Destination)}");
 
-            
+            #endregion
+
+
+            DeliveryUtilities.PrintSpartor();
+            DeliveryUtilities.PrintSystemTitle();
+            DeliveryUtilities.PrintSpartor();
+
+            // ========= Creating Shipment ===========
+
+            Console.WriteLine("---------- StandardShipment ----------");
+            Console.Write("Entre TrackingCode :");
+            string trackingcode = Console.ReadLine();
+            Console.Write("Entre Decription :");
+            string desription = Console.ReadLine();
+            Console.Write("Entre Weight :");
+            double weight = double.Parse(Console.ReadLine());
+            Console.Write("Entre DeliveryFee :");
+            decimal deliveryfee = decimal.Parse(Console.ReadLine());
+            Console.Write("Enter city :");
+            string city = Console.ReadLine();
+            Console.Write("Entre Street :");
+            string street = Console.ReadLine();
+            Console.Write("Entre BuildingNumber :");
+            int buildingNumber = int.Parse(Console.ReadLine());
+            DeliveryAddress deliveryAddress = new DeliveryAddress(city, street, buildingNumber);
+            StandardShipment standardShipment = new(trackingcode, desription, weight, deliveryfee, deliveryAddress );
+
+            Console.WriteLine("---------- Express Shipment ----------");
+            Console.Write("Entre TrackingCode :");
+            string trackingcode2 = Console.ReadLine();
+            Console.Write("Entre Decription :");
+            string desription2 = Console.ReadLine();
+            Console.Write("Entre Weight :");
+            double weight2 = double.Parse(Console.ReadLine());
+            Console.Write("Entre DeliveryFee :");
+            decimal deliveryfee2 = decimal.Parse(Console.ReadLine());
+            Console.Write("Enter city :");
+            string city2 = Console.ReadLine();
+            Console.Write("Entre Street :");
+            string street2 = Console.ReadLine();
+            Console.Write("Entre BuildingNumber :");
+            int buildingNumber2 = int.Parse(Console.ReadLine());
+            Console.Write("Entre Extrafee :");
+            decimal extrafee = decimal.Parse(Console.ReadLine());
+            DeliveryAddress deliveryAddress2 = new DeliveryAddress(city2, street2, buildingNumber2);
+            ExpressShipment expressShipment = new ExpressShipment(trackingcode2, desription2, weight2, deliveryfee2, deliveryAddress2, extrafee);
+
+            Console.WriteLine("---------- International Shipment ----------");
+            Console.Write("Entre TrackingCode :");
+            string trackingcode3 = Console.ReadLine();
+            Console.Write("Entre Decription :");
+            string desription3 = Console.ReadLine();
+            Console.Write("Entre Weight :");
+            double weight3 = double.Parse(Console.ReadLine());
+            Console.Write("Entre DeliveryFee :");
+            decimal deliveryfee3 = decimal.Parse(Console.ReadLine());
+            Console.Write("Enter city :");
+            string city3 = Console.ReadLine();
+            Console.Write("Entre Street :");
+            string street3 = Console.ReadLine();
+            Console.Write("Entre BuildingNumber :");
+            int buildingNumber3 = int.Parse(Console.ReadLine());
+            Console.Write("Entre DestenationCountry :");
+            string destenationcountry = Console.ReadLine();
+            Console.Write("Entre CustomFee :");
+            decimal customfee = decimal.Parse(Console.ReadLine());
+            DeliveryAddress deliveryAddress3 = new DeliveryAddress(city3, street3, buildingNumber3);
+            InternationalShipment internationalShipment = new InternationalShipment(trackingcode3, desription3, weight3, deliveryfee3, deliveryAddress3, destenationcountry, customfee);
+
+            Console.WriteLine("---------- Counter ----------");
+            Console.WriteLine($"Total Shipment Created{Shipment.GetTotalShipments()}");
+
+            Console.WriteLine("---------- Object Copy ----------");
+            Shipment assignedShipment = standardShipment;
+            Console.WriteLine($"Original Shipment : {standardShipment.TrackingCode}"); 
+            Console.WriteLine($"Assigned Shipment : {assignedShipment.TrackingCode}");
+            Console.WriteLine($"Same Object : {ReferenceEquals(standardShipment, assignedShipment)}");
+
+            Console.WriteLine("---------- Shallow Copy ----------");
+            Shipment shallowCopy = standardShipment.ShallowCopyShipment();
+            Console.WriteLine($"Original Shipment Address : {standardShipment.Destination.city}");
+            Console.WriteLine($"Copied Shipment Address : {shallowCopy.Destination.city}"); 
+            Console.WriteLine("\nChanging copied shipment address..."); shallowCopy.Destination.city = "Giza";
+            Console.WriteLine($"Original Shipment Address : {standardShipment.Destination.city}");
+            Console.WriteLine($"Copied Shipment Address : {shallowCopy.Destination.city}");
+            Console.WriteLine("Same DeliveryAddress Object : " + $"{ReferenceEquals(standardShipment.Destination, shallowCopy.Destination)}");
+
+            Console.WriteLine("---------- Deep Copy ----------");
+            Shipment deepCopy = standardShipment.DeepCopyShipment();
+            Console.WriteLine($"Original Shipment Address : {standardShipment.Destination.city}");
+            Console.WriteLine($"Copied Shipment Address : {deepCopy.Destination.city}");
+            Console.WriteLine("\nChanging copied shipment address...");
+            deepCopy.Destination.city = "Giza";
+            Console.WriteLine($"Original Shipment Address : {standardShipment.Destination.city}");
+            Console.WriteLine($"Copied Shipment Address : {deepCopy.Destination.city}");
+            Console.WriteLine("Same DeliveryAddress Object : " + $"{ReferenceEquals(standardShipment.Destination, deepCopy.Destination)}");
+
+            Console.WriteLine("---------- Extention Method ----------");
+            standardShipment.UpdateTrackingStatus("In Transit");
+            expressShipment.UpdateTrackingStatus("Out For Delivery");
+            internationalShipment.UpdateTrackingStatus("Delivered");
+            Console.WriteLine(standardShipment.GetSummary());
+            Console.WriteLine(expressShipment.GetSummary());
+            Console.WriteLine(internationalShipment.GetSummary()); 
+            Console.WriteLine();
+            Console.WriteLine($"{standardShipment.TrackingCode} Is Delivered : " + $"{standardShipment.IsDelivered()}");
+            Console.WriteLine($"{internationalShipment.TrackingCode} Is Delivered : " + $"{internationalShipment.IsDelivered()}");
+
+            Console.WriteLine("---------- Tracking Status ----------");
+            expressShipment.UpdateTrackingStatus("Out For Delivery");
+
+            Console.WriteLine("---------- Delivery Centre ----------");
+            Console.Write("Enter Delivery Center Name: ");
+            string centerName = Console.ReadLine()!; 
+            DeliveryCenter center = new DeliveryCenter(centerName);
+            center.AddShipment(standardShipment); 
+            center.AddShipment(expressShipment);
+            center.AddShipment(internationalShipment); 
+            center.PrintAllShipments(); 
+            Console.WriteLine($"\nTotal Shipments Created : " + $"{Shipment.GetTotalShipments()}");
             #endregion
         }
     }
